@@ -30,7 +30,7 @@ def inference(model_inputs: dict) -> dict:
 
     # Run the model
     result = model.transcribe("input.mp3")
-    output = {"text": result}
+    output = {"text": result["segments"]}
     os.remove("input.mp3")
     # Return the results as a dictionary
     return output
